@@ -18,11 +18,13 @@ if(isset($_GET['id'])){
         $text = $row['text'];
         $image = $row['image'];
     }else{
-        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        // header('Location: ' . $_SERVER['HTTP_REFERER']);
+        echo "från update andra ifen";
         exit;
       }
 }else{
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    // header('Location: ' . $_SERVER['HTTP_REFERER']);
+    echo "från update första ifen";
     exit;
  }
 
@@ -31,15 +33,21 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     require_once 'upload.php';
 
+ 
+
+
     $title = htmlspecialchars($_POST['title']);
     $text  = htmlspecialchars($_POST['text']);
     $id   = htmlspecialchars($_POST['id']);
     $image = htmlspecialchars($row['image']);
     $iframe = strip_tags($_POST['iframe'], '<iframe>');
+
   
     $sql = "UPDATE blog
             SET title = :title, text = :text, image = :image, iframe = :iframe
             WHERE id = :id";
+
+
   
     $stmt = $db->prepare($sql);
   
