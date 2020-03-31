@@ -3,7 +3,6 @@
     Skapar en databasuppkoppling med PDO
 */
 
-
 ini_set('display_errors', '1');
 error_reporting(E_ALL);
 
@@ -11,6 +10,12 @@ $db_server = "localhost";
 $db_database = "myblog";
 $db_username = "root";
 $db_password = "root";
+
+// online
+// $db_server = "localhost";
+// $db_database = "idbrrneh_wpdbase";
+// $db_username = "idbrrneh_wpdbase";
+// $db_password = "seanmelodii2009";
 try{
 $db = new PDO("mysql:host=$db_server;dbname=$db_database;charset=utf8"
 ,

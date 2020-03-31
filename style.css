@@ -2,45 +2,60 @@
     justify-content: center;
 }
 
-/* Hem */
+/* Button */
+.btn {
+    border-radius: 10px;
+}
 
-.my-4 {
-    padding-top: 100px;
+/* iframe */
+.iframeCreate {
+    width: 100%;
 }
-.adm {
-    /* padding-left: 20%; */
+.iframeShow {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* view */
+
+.index-header {
+    font-family: "Comic Neue", cursive;
+    background: white;
+    height: 150px;
+    font-size: 30%;
+    display: flex;
     justify-content: center;
+    align-items: center;
 }
-.card-footer {
-    margin-bottom: 70px;
+.index-header h1 {
+    color: rgb(19, 37, 19);
+    margin: 10%;
 }
+
+#index {
+    background: rgb(230, 227, 227);
+}
+
 .mb-4 img {
     width: 100%;
     height: 300px;
     object-fit: cover;
 }
 
-/* Adm header */
+/* Create */
 
-/* Form */
-
-.btn-danger {
+.avbrytBtn {
     width: 80px;
     margin-top: 10px;
 }
 
-.btn-danger a {
-    color: white;
-}
+/* read-list */
 
-/* Lista */
 th {
     font-size: 20px;
     color: rgb(221, 124, 13);
 }
-.tablelist {
-    width: 700px;
-}
+
 .listUpdateBtn {
     margin-bottom: 10px;
 }
@@ -50,7 +65,7 @@ th {
 
 /* Update.php */
 .form-group img {
-    width: 50%;
+    width: 70%;
 }
 .upDateBtn {
     width: 100px;
@@ -61,15 +76,16 @@ th {
 }
 
 /* Read-blog */
+
+.admRubrik {
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
 .card a {
     width: 110px;
-    border-radius: 10px;
+    margin: 20px;
 }
-.readStatus {
-    width: 110px;
-    margin-top: 10px;
-}
-.readUpdate {
-    margin-top: 10px;
-    margin-bottom: 10px;
+.readMore {
+    background: #0d8cd1;
+    border: none;
 }

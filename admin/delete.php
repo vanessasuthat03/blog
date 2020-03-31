@@ -1,17 +1,9 @@
   
 <?php
 
-/**************************************
- * 
- * delete.php
- 
- * 1. Filen tar bort en rad från databasen
- *    med hjälp av ett id
- *************************************/
-
 require_once '../db.php';
 
-// if($_SERVER["REQUEST_METHOD"]=== "GET"){
+ if($_SERVER["REQUEST_METHOD"]=== "GET"){
     if(isset($_GET['id'])){
 
         $id = $_GET['id']; 
@@ -23,16 +15,7 @@ require_once '../db.php';
 
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
         $image = $row['image'];
-        $link ="$image";
-        // if (!unlink($link)) {
-        //     echo "nope";
-        // }else {
-        //     echo "$link";
-        // }
-
-        unlink($link);
-      
-      
+        unlink($image);
       
         $sql = "DELETE FROM blog WHERE id = :id";
         $stmt = $db->prepare($sql);
@@ -40,11 +23,7 @@ require_once '../db.php';
         $stmt->execute();
       
       }
-
-// }
-
-
-header("Location: read-blog.php");
-
+}
+header('Location: ' . $_SERVER['HTTP_REFERER']);
 
 ?>
