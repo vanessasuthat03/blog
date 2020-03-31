@@ -3,6 +3,9 @@
 require_once '../db.php';
 require_once 'header-adm.php';
 
+$stmt = $db->prepare("SELECT * FROM blog ORDER BY created_at DESC");
+$stmt->execute();
+
 $output = '<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                 <div class="container">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,8 +33,7 @@ $output = '<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="post col-md-8">
             <h1 class="admRubrik my-4">Välkommen <small>till adminpanelen</small></h1>';
 
-$stmt = $db->prepare("SELECT * FROM blog ORDER BY created_at DESC");
-$stmt->execute();
+
 
 while($row = $stmt->fetch(PDO::FETCH_ASSOC)) :
     $id = htmlspecialchars($row['id']);

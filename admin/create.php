@@ -3,33 +3,7 @@
 require_once '../db.php';
 require_once 'header-adm.php';
 
-$output = '<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <div class="container">
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="read-blog.php">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="read-list.php">Blog list</a>
-                  </li>
-                  <li class="nav-item active">
-                    <a class="nav-link" href="create.php">Skapa ett inlägg
-                    <span class="sr-only">(current)</span></a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
 
-  <div class="container">
-    <div class="row">
-      <div class="post col-md-8">
-        <h1 class="admRubrik my-4">Välkommen
-          <small>till adminpanelen</small></h1>';
 
         if($_SERVER['REQUEST_METHOD']=== 'POST' && !empty($_FILES["fileToUpload"]["name"])):
             require_once 'upload.php';
@@ -56,7 +30,33 @@ $output = '<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             endif;
 
         endif;
+        $output = '<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="read-blog.php">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="read-list.php">Blog list</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="create.php">Skapa ett inlägg
+                <span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
+<div class="container">
+<div class="row">
+  <div class="post col-md-8">
+    <h1 class="admRubrik my-4">Välkommen
+      <small>till adminpanelen</small></h1>';
 
 echo $output;
 ?>
