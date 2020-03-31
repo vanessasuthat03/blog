@@ -18,13 +18,13 @@ if(isset($_GET['id'])){
         $text = $row['text'];
         $image = $row['image'];
     }else{
-        // header('Location: ' . $_SERVER['HTTP_REFERER']);
-        echo "från update andra ifen";
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+        //echo "från update andra ifen";
         exit;
       }
 }else{
-    // header('Location: ' . $_SERVER['HTTP_REFERER']);
-    echo "från update första ifen";
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    //echo "från update första ifen";
     exit;
  }
 
